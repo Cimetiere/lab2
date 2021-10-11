@@ -7,6 +7,8 @@ import com.opstty.job.Existing_species;
 import com.opstty.job.Count_by_kind;
 import com.opstty.job.Max_height_per_kind_of_tree;
 import com.opstty.job.Trees_sorted_by_height;
+import com.opstty.job.OldestTreeDistrictReduce;
+import com.opstty.job.OldestTreeDistrictSort;
 
 public class AppDriver {
     public static void main(String argv[]) {
@@ -26,6 +28,11 @@ public class AppDriver {
                     "A map/reduce program that calculates the height of the tallest tree in each kind.");
             programDriver.addClass("Trees_sorted_by_height", Trees_sorted_by_height.class,
                     "A map/reduce program that sorts the trees height from smallest to largest.");
+            programDriver.addClass("oldestTreeDistrictSort", OldestTreeDistrictSort.class,
+                    "A map/reduce program that returns the district(s) with the oldest tree(s) using a sort.");
+            programDriver.addClass("oldestTreeDistrictReduce", OldestTreeDistrictReduce.class,
+                    "A map/reduce program that returns the district(s) with the oldest tree(s) while looking at all the data.");
+
 
             exitCode = programDriver.run(argv);
         } catch (Throwable throwable) {
